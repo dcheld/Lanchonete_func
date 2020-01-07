@@ -1,0 +1,22 @@
+<div class="row">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Lanche</th>
+        <th scope="col">Selecionar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lanche of lanches$ | async" >
+        <td scope="row"> {{ lanche.id }}</td>
+        <td>{{ lanche.nome }}</td>
+        <td><button type="button" class="btn btn-link"  (click)='selecionarLanche(lanche)'>Selecionar</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-secondary" (click)='novoLanche()' >Meu Lanche</button>
+</div>
+<br>
+<br>
+<app-ingredientes [lanche]='lancheSelecionado' (cancelar)='onCancelar()' ></app-ingredientes>
