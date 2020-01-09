@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Pedido.API.Extensions;
 using Pedido.Core.Application.Ingredientes.Commands;
+using Pedido.Core.Data.Interface;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Pedido.API.Controllers
 {
@@ -8,9 +11,11 @@ namespace Pedido.API.Controllers
     [ApiController]
     public class IngredienteController : Controller
     {
+        private readonly IMediator mediator;
 
-        public IngredienteController()
+        public IngredienteController(IMediator mediator)
         {
+            this.mediator = mediator;
         }
 
         [HttpGet]
@@ -20,14 +25,9 @@ namespace Pedido.API.Controllers
         }
 
         [HttpPost]
-        public void Create(CreateIngrediente ingrediente)
-        {
-        }
-
-        [HttpPut]
-        public void Update(CreateIngrediente ingrediente)
-        {
-        }
+        public async Task<IActionResult> Create(CreateIngrediente createIngrediente) =>
+                await mediator.SendAsync(createIngrediente)
+                    .ToActionResult();
 
         [HttpDelete]
         public void Delete(CreateIngrediente ingrediente)

@@ -2,13 +2,13 @@
 
 namespace Pedido.Core.Data.Interface
 {
-    public interface ICommandHandler<in T>
-        where T: ICommand
+    public interface ICommandHandler<in TRequest, TResponse>
+        where TRequest: ICommand<TRequest, TResponse>
     {
-        Task Handler(T command);
+        Task<TResponse> Handler(TRequest command);
     }
 
-    public interface ICommand
+    public interface ICommand<TRequest, out TResponse>
     {
     }
 }
