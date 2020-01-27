@@ -52,7 +52,7 @@ namespace Pedido.API
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Lanchonet v1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Snackbar v1");
                 c.RoutePrefix = string.Empty;
             });
 
