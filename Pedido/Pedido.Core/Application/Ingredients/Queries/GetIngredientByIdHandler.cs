@@ -36,7 +36,7 @@ namespace Pedido.Core.Application.Ingredients.Queries
 
         private async Task<Either<string, Ingredient>> RetrieveIngredient(int id) =>
             (await _ingredientRepository.Get(id))
-                .ToEither($"Não foi encontrado um ingrediente com id {id}");
+                .ToEither($"Nao foi encontrado um ingrediente com id {id}");
 
     }
 }
