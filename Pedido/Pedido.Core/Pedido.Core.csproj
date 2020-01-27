@@ -5,35 +5,23 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Application\Ingredientes\Commands\DeleteIngrediente.cs" />
-    <Compile Remove="Application\Ingredientes\Commands\DeleteIngredienteHandler.cs" />
-    <Compile Remove="Application\Ingredientes\Commands\UpdateIngrediente.cs" />
-    <Compile Remove="Application\Ingredientes\Commands\UpdateIngredienteHandler.cs" />
-    <Compile Remove="Application\Lanches\Commands\CreateLanche.cs" />
-    <Compile Remove="Application\Lanches\Commands\CreateLancheHandler.cs" />
-    <Compile Remove="Application\Lanches\Commands\DeleteLanche.cs" />
-    <Compile Remove="Application\Lanches\Commands\DeleteLancheHandler.cs" />
-    <Compile Remove="Application\Lanches\Commands\UpdateLanche.cs" />
-    <Compile Remove="Application\Lanches\Commands\UpdateLancheHandler.cs" />
-    <Compile Remove="Application\Pedidos\Commands\CreatePedido.cs" />
-    <Compile Remove="Application\Pedidos\Commands\CreatePedidoHandler.cs" />
+    <Compile Remove="Application\Ingredientes\**" />
+    <Compile Remove="Application\Lanches\**" />
+    <Compile Remove="Application\Pedidos\**" />
+    <EmbeddedResource Remove="Application\Ingredientes\**" />
+    <EmbeddedResource Remove="Application\Lanches\**" />
+    <EmbeddedResource Remove="Application\Pedidos\**" />
+    <None Remove="Application\Ingredientes\**" />
+    <None Remove="Application\Lanches\**" />
+    <None Remove="Application\Pedidos\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\Ingredientes\Queries\" />
-    <Folder Include="Application\Lanches\Commands\" />
-    <Folder Include="Application\Lanches\Queries\" />
-    <Folder Include="Application\Pedidos\Commands\" />
-    <Folder Include="Application\Pedidos\Queries\" />
-    <Folder Include="Data\Interface\Repositories\" />
-    <Folder Include="Infra\Repositories\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="LanguageExt.Core" Version="3.3.48" />
+    <PackageReference Include="Tango" Version="3.1.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="3.1.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.0" />
+
   </ItemGroup>
 
 </Project>
